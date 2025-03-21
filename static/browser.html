@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- ******** CSS ******** -->
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- bookmarks -->
+  <link href="bookmarks.css" rel="stylesheet" type="text/css" />
+  <!-- chrome tabs -->
+  <link href="chrome-tabs/css/chrome-tabs.css" rel="stylesheet" />
+  <link href="chrome-tabs/css/chrome-tabs-dark-theme.css" rel="stylesheet" />
+  <!-- external -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- ******** JS ******** -->
+  <!-- DIP stuff -->
+  <script src="dip/dip.config.js"></script>
+  <script src="dip/dip.page.js"></script>
+  <!-- UV stuff -->
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <!-- Helpers -->
+  <script src="helpers.js"></script>
+  <script src="proxyHelpers.js"></script>
+  <script src="bookmarks.js"></script>
+</head>
+
+<body onload="init();">
+  <div class="container browserContainer">
+    <div class="chrome-tabs" style="--tab-content-margin: 9px">
+      <div class="chrome-tabs-content-wrapper">
+        <button id="addtab" class="chrome-tabs-btn" data-add-tab style="position:absolute;"><i
+            class="fa-solid fa-plus fa-xl tabBtnIcon"></i></button>
+        <div class="chrome-tabs-content">
+        </div>
+        <div class="chrome-tabs-content-after"></div>
+      </div>
+      <div class="chrome-tabs-bottom-bar"></div>
+      <!-- Styles to prevent flash after JS initialization -->
+      <style>
+        .chrome-tabs .chrome-tab {
+          width: 258px
+        }
+
+        .chrome-tabs .chrome-tab:nth-child(1) {
+          transform: translate3d(0px, 0, 0)
+        }
+
+        .chrome-tabs .chrome-tab:nth-child(2) {
+          transform: translate3d(239px, 0, 0)
+        }
+      </style>
+    </div>
+    <div class="navbar">
+      <button class="navbarBtn" id="browserBack" onclick="window.aboutbrowser.handleBack()">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <button class="navbarBtn" id="browserForward" onclick="window.aboutbrowser.handleForward()">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      <button class="navbarBtn" id="browserReload" onclick="window.aboutbrowser.handleReload();">
+        <i class="fa-solid fa-rotate-right"></i></button>
+      <input class="navbarUrl" id="browserUrl"></input>
+      <div class="bookmarksBtnWrapper">
+        <button class="navbarBtn bookmarksBtn" id="browserBookmarks" onclick="window.aboutbrowser.handleBookmarks();">
+          <i class="fa-regular fa-star"></i>
+        </button>
+      </div>
+      <button class="navbarBtn" id="browserExtensions" onclick="window.aboutbrowser.handleExtensions();">
+        <i class="fa-solid fa-puzzle-piece"></i>
+      </button>
+      <button class="navbarBtn" id="games" onclick="window.aboutbrowser.handleGames();">
+        <i class="fa-solid fa-gamepad"></i>
+      </button>
+      <button class="navbarBtn" id="browserSettings" onclick="window.aboutbrowser.handleSettings();">
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+      </button>
+    </div>
+    <div>
+      <div class="settingsCtxMenu" style="display: none;">
+        <button onclick="window.aboutbrowser.handleSettingsCtxMenu('newTab');">New tab</button>
+        <div class="sep"></div>
+        <button onclick="window.aboutbrowser.handleSettingsCtxMenu('history');">History</button>
+        <button onclick="window.aboutbrowser.handleSettingsCtxMenu('downloads');">Downloads</button>
+        <button onclick="window.aboutbrowser.handleSettingsCtxMenu('bookmarks');">Bookmarks</button>
+        <button onclick="window.aboutbrowser.handleSettingsCtxMenu('settings');">Settings</button>
+        <div class="sep"></div>
+        <button onclick="window.aboutbrowser.handleSettingsCtxMenu('about');">About AboutBrowser</button>
+      </div>
+    </div>
+    <div class="bookmarksContainer"></div>
+    <div class="popupWrapper" id="popupContainer">
+      <div class="popup">
+        <p class="popupTitle">Title</p>
+        <p class="popupContent">Lorem ipsum dolor sit amet.</p>
+        <button class="popupButtonMain">OK</button>
+      </div>
+    </div>
+    <div id="tabContents" class="browser"></div>
+  </div>
+  <script src="browser.js"></script>
+  <script src="browser-api.js"></script>
+  <script src="/draggabilly.pkgd.min.js"></script>
+  <script src="chrome-tabs/js/chrome-tabs.js"></script>
+</body>
+
+</html>

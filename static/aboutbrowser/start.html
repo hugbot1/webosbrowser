@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>New Tab</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <link href="dark-theme.css" rel="stylesheet" type="text/css" />
+    <link href="start.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="robot.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="content">
+            <h1>AboutBrowser</h1>
+            <input type="text" class="navbarUrl" placeholder="Search or type a URL" id="omnibox">
+            <div id="recents">
+                <h3>Recents coming after history persistence!</h1>
+            </div>
+        </div>
+        <div class="footerRight">
+            AboutBrowser 0.8.1
+            <button class="navbarBtn" id="browserBack" onclick="openVerHistory();"><i
+                    class="fa-solid fa-clock-rotate-left"></i></button>
+        </div>
+    </div>
+    <script src="/browser-api-tab.js"></script>
+    <script src="start.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Bookmarks</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+    <link href="/aboutbrowser/bookmarks.css" rel="stylesheet" type="text/css" />
+    <link href="/aboutbrowser/dark-theme.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/aboutbrowser/chrome-ui.css">
+    <script src="/helpers.js"></script>
+    <script src="/browser-api-tab.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <div class="topBar">
+            <img class="icon" src="/aboutbrowser/darkfavi.png"></img>
+            <div class="title">Bookmarks</div>
+            <div class="navbarUrlContainer"><input class="navbarUrl" placeholder="Don't search bookmarks"></input></div>
+        </div>
+        <div class="content">
+        <div class="sideBar">
+        </div>
+            <div class="actualContent">
+                <div class="bookmarksTableWrapper">
+                    <button id="addBookmark" onclick="createBookmark('Mercury Workshop', 'https://mercurywork.shop')">+</button>
+                    <div id="bookmarksTable"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/bookmarks.js"></script>
+    <script src="bookmarks.js"></script>
+</body>
+
+</html>
+
